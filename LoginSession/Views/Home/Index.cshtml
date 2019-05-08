@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    if (Session["UserID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<h2>Welcome @Session["UserName"].ToString()</h2>
+
+@Html.ActionLink("Logout", "Logout", "Login")
+
